@@ -168,7 +168,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(function () {
-        var socket = io.connect("http://localhost:3000/");
+          console.log(location.host);
+        var socket = io.connect(location.host);
 
         $("#form").submit(function () {
           socket.emit("chat message", $("#input").val());
